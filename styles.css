@@ -273,101 +273,122 @@ body {
   border-radius: var(--radius-lg);
   padding: 1.15rem 1.15rem 0.85rem;
   box-shadow: var(--shadow-sm);
-  overflow-x: auto;
 }
 
-.flow-map {
+.lanes {
   display: grid;
-  grid-template-columns: minmax(150px, 0.9fr) 28px minmax(180px, 1.1fr) 28px minmax(220px, 1.35fr);
-  gap: 0.65rem;
+  gap: 0.85rem;
+}
+
+.lane {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 0;
   align-items: stretch;
-  min-width: 760px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fbfcfe;
 }
 
-.flow-col {
+.lane-label {
   display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-}
-
-.flow-col-label {
-  font-size: 0.72rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 0.15rem;
-}
-
-.flow-node {
-  width: 100%;
-  text-align: left;
-  background: #f8fafc;
-  border: 1px solid var(--border-strong);
-  border-radius: 12px;
-  padding: 0.85rem 0.95rem;
-  color: var(--navy-secondary);
-  font-weight: 650;
-  font-size: 0.92rem;
-  line-height: 1.35;
+  font-size: 0.95rem;
+  padding: 1rem 0.75rem;
+  color: #fff;
+  border: none;
+  border-radius: 0;
   box-shadow: none;
+  width: 100%;
 }
 
-.flow-node:hover,
-.flow-node:focus-visible {
-  background: #fff;
-  border-color: var(--accent-blue);
+.lane.sup .lane-label { background: var(--accent-blue); }
+.lane.uns .lane-label { background: var(--accent-gold); }
+.lane.gen .lane-label { background: var(--accent-gen); }
+
+.lane-label:hover,
+.lane-label:focus-visible {
+  filter: brightness(1.06);
   transform: none;
 }
 
-.flow-node .flow-sub {
-  display: block;
-  margin-top: 0.28rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--text-muted);
-}
-
-.flow-node.type-node.supervised-border {
-  border-top-width: 3px;
-  border-top-color: var(--accent-blue);
-}
-
-.flow-node.type-node.unsupervised-border {
-  border-top-width: 3px;
-  border-top-color: var(--accent-gold);
-}
-
-.flow-node.type-node.generative-border {
-  border-top-width: 3px;
-  border-top-color: var(--accent-gen);
-}
-
-.flow-arrows {
+.lane-body {
+  padding: 0.9rem 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  gap: 0.7rem;
+  background: #fff;
+}
+
+.domain-row {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.domain-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-align: left;
+  padding: 0.3rem 0;
+  border: none;
+  background: transparent;
+  color: var(--navy-secondary);
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.domain-name:hover,
+.domain-name:focus-visible {
+  color: var(--accent-blue);
+  background: transparent;
+  transform: none;
+}
+
+.algo-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chip {
+  display: inline-flex;
   align-items: center;
-  padding-top: 1.6rem;
-}
-
-.flow-arrows span {
-  width: 18px;
-  height: 2px;
-  background: #94a3b8;
-  position: relative;
+  padding: 0.35rem 0.7rem;
   border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: var(--domain-bg);
+  color: var(--navy-secondary);
+  border: 1px solid transparent;
+  box-shadow: none;
 }
 
-.flow-arrows span::after {
-  content: "";
-  position: absolute;
-  right: -1px;
-  top: 50%;
-  transform: translateY(-50%);
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-  border-left: 6px solid #94a3b8;
+.chip:hover,
+.chip:focus-visible {
+  transform: none;
+  border-color: var(--border-strong);
+  background: #fff;
+}
+
+.chip-cv {
+  background: var(--domain-cv-bg);
+  color: var(--domain-cv);
+}
+
+.chip-nlp {
+  background: var(--domain-nlp-bg);
+  color: var(--domain-nlp);
+}
+
+.chip-gen {
+  background: var(--accent-gen-bg);
+  color: var(--accent-gen);
 }
 
 .map-hint {
@@ -375,6 +396,18 @@ body {
   font-size: 0.82rem;
   color: var(--text-muted);
   text-align: center;
+}
+
+@media (max-width: 720px) {
+  .lane,
+  .domain-row {
+    grid-template-columns: 1fr;
+  }
+
+  .lane-label {
+    justify-content: flex-start;
+    padding: 0.75rem 1rem;
+  }
 }
 
 .results-count {

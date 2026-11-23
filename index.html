@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Machine Learning Algorithm Types — Visual Framework</title>
+  <title>Machine Learning Algorithm Types: Visual Framework</title>
   <meta name="description" content="Visual framework of machine learning algorithms across supervised, unsupervised, and generative learning within tabular data, computer vision, NLP, and generative AI." />
   <meta property="og:title" content="Machine Learning Algorithm Types & Application Domains" />
   <meta property="og:description" content="Interactive visual framework comparing algorithms across tabular data, computer vision, NLP, and generative AI." />
@@ -90,7 +90,7 @@
     <section class="learning-styles" aria-label="Learning Styles">
       <div class="section-header">
         <h2>Learning Styles</h2>
-        <p>Algorithms are labeled by how they learn from data—supervised, unsupervised, or generative</p>
+        <p>Algorithms are labeled by how they learn from data: supervised, unsupervised, or generative</p>
       </div>
       <div class="learning-style-grid three-col">
         <article class="style-card supervised-border">
@@ -133,39 +133,67 @@
     <section class="relationship-map" aria-label="Algorithm Relationship Map">
       <div class="section-header">
         <h2>How Algorithms Relate</h2>
-        <p>Click a node to filter the framework—from learning style to domain to model family</p>
+        <p>Each learning style is a lane. Click a lane, domain, or algorithm chip to filter the framework.</p>
       </div>
       <div class="map-shell">
-        <div class="flow-map" role="img" aria-label="Relationship map from learning styles through domains to algorithm families">
-          <div class="flow-col">
-            <p class="flow-col-label">Learning Style</p>
-            <button type="button" class="flow-node type-node supervised-border" data-type="Supervised">Supervised</button>
-            <button type="button" class="flow-node type-node unsupervised-border" data-type="Unsupervised">Unsupervised</button>
-            <button type="button" class="flow-node type-node generative-border" data-type="Generative">Generative</button>
-          </div>
+        <div class="lanes" aria-label="Swimlane relationship map">
+          <article class="lane sup">
+            <button type="button" class="lane-label" data-type="Supervised" aria-label="Filter Supervised">Supervised</button>
+            <div class="lane-body">
+              <div class="domain-row">
+                <button type="button" class="domain-name" data-domain="Tabular Data" data-type="Supervised">Tabular Data</button>
+                <div class="algo-wrap">
+                  <button type="button" class="chip" data-domain="Tabular Data" data-type="Supervised">Regression</button>
+                  <button type="button" class="chip" data-domain="Tabular Data" data-type="Supervised">Decision Trees</button>
+                  <button type="button" class="chip" data-domain="Tabular Data" data-type="Supervised">Random Forests</button>
+                  <button type="button" class="chip" data-domain="Tabular Data" data-type="Supervised">Gradient Boosting</button>
+                  <button type="button" class="chip" data-domain="Tabular Data" data-type="Supervised">SVM</button>
+                </div>
+              </div>
+              <div class="domain-row">
+                <button type="button" class="domain-name" data-domain="Computer Vision" data-type="Supervised">Computer Vision</button>
+                <div class="algo-wrap">
+                  <button type="button" class="chip chip-cv" data-domain="Computer Vision" data-type="Supervised">CNNs</button>
+                  <button type="button" class="chip chip-cv" data-domain="Computer Vision" data-type="Supervised">YOLO</button>
+                </div>
+              </div>
+              <div class="domain-row">
+                <button type="button" class="domain-name" data-domain="NLP" data-type="Supervised">NLP</button>
+                <div class="algo-wrap">
+                  <button type="button" class="chip chip-nlp" data-domain="NLP" data-type="Supervised">BERT / Encoders</button>
+                </div>
+              </div>
+            </div>
+          </article>
 
-          <div class="flow-arrows" aria-hidden="true"><span></span><span></span><span></span></div>
+          <article class="lane uns">
+            <button type="button" class="lane-label" data-type="Unsupervised" aria-label="Filter Unsupervised">Unsupervised</button>
+            <div class="lane-body">
+              <div class="domain-row">
+                <button type="button" class="domain-name" data-domain="Tabular Data" data-type="Unsupervised">Tabular Data</button>
+                <div class="algo-wrap">
+                  <button type="button" class="chip" data-domain="Tabular Data" data-type="Unsupervised">K-Means</button>
+                  <button type="button" class="chip" data-domain="Tabular Data" data-type="Unsupervised">PCA</button>
+                </div>
+              </div>
+            </div>
+          </article>
 
-          <div class="flow-col">
-            <p class="flow-col-label">Application Domain</p>
-            <button type="button" class="flow-node domain-node" data-domain="Tabular Data">Tabular Data<span class="flow-sub">from Supervised + Unsupervised</span></button>
-            <button type="button" class="flow-node domain-node" data-domain="Computer Vision">Computer Vision<span class="flow-sub">from Supervised</span></button>
-            <button type="button" class="flow-node domain-node" data-domain="NLP">NLP<span class="flow-sub">from Supervised</span></button>
-            <button type="button" class="flow-node domain-node" data-domain="Generative AI">Generative AI<span class="flow-sub">from Generative</span></button>
-          </div>
-
-          <div class="flow-arrows" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-
-          <div class="flow-col flow-col-wide">
-            <p class="flow-col-label">Algorithm Families</p>
-            <button type="button" class="flow-node leaf-node" data-domain="Tabular Data" data-type="Supervised">Regression · Trees · Ensembles · SVM</button>
-            <button type="button" class="flow-node leaf-node" data-domain="Tabular Data" data-type="Unsupervised">K-Means · PCA</button>
-            <button type="button" class="flow-node leaf-node" data-domain="Computer Vision">CNNs · YOLO Detectors</button>
-            <button type="button" class="flow-node leaf-node" data-domain="NLP">BERT / Encoder Transformers</button>
-            <button type="button" class="flow-node leaf-node" data-domain="Generative AI">Diffusion · GANs · GPT</button>
-          </div>
+          <article class="lane gen">
+            <button type="button" class="lane-label" data-type="Generative" aria-label="Filter Generative">Generative</button>
+            <div class="lane-body">
+              <div class="domain-row">
+                <button type="button" class="domain-name" data-domain="Generative AI" data-type="Generative">Generative AI</button>
+                <div class="algo-wrap">
+                  <button type="button" class="chip chip-gen" data-domain="Generative AI" data-type="Generative">Diffusion</button>
+                  <button type="button" class="chip chip-gen" data-domain="Generative AI" data-type="Generative">GANs</button>
+                  <button type="button" class="chip chip-gen" data-domain="Generative AI" data-type="Generative">GPT</button>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
-        <p class="map-hint">Tip: click any node to filter—domain tiles and the filter bar stay in sync.</p>
+        <p class="map-hint">Tip: click any lane, domain, or chip to filter. Domain tiles and the filter bar stay in sync.</p>
       </div>
     </section>
 
@@ -237,7 +265,7 @@
           <p id="modal-classification"></p>
         </div>
         <div class="modal-block">
-          <h4>Brief Explanation — How It Works</h4>
+          <h4>Brief Explanation: How It Works</h4>
           <p id="modal-explanation"></p>
         </div>
         <div class="modal-block">
@@ -306,7 +334,7 @@
         icon: "tree",
         explanation: "Recursively splits tabular data into hierarchical if-then decision branches using metrics like Gini impurity or information gain to minimize prediction error.",
         useCases: "Loan approval rule engines, clinical triage protocols, and transparent credit-risk screening.",
-        comparison: "Highly interpretable and handles non-linear rules naturally, but single trees easily overfit noisy data—motivating ensemble methods like Random Forests."
+        comparison: "Highly interpretable and handles non-linear rules naturally, but single trees easily overfit noisy data, motivating ensemble methods like Random Forests."
       },
       {
         name: "Random Forests",
@@ -599,16 +627,14 @@
       });
     });
 
-    document.querySelectorAll(".flow-node").forEach((node) => {
+    document.querySelectorAll(".lane-label, .domain-name, .chip").forEach((node) => {
       node.addEventListener("click", () => {
         const domain = node.dataset.domain || "all";
         const type = node.dataset.type || "all";
-        if (node.classList.contains("type-node")) {
+        if (node.classList.contains("lane-label")) {
           setFilters({ domain: "all", type });
-        } else if (node.dataset.type && node.dataset.domain) {
-          setFilters({ domain, type });
         } else {
-          setFilters({ domain, type: "all" });
+          setFilters({ domain, type });
         }
       });
     });
