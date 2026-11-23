@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Machine Learning Algorithm Types — Visual Framework</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <p class="eyebrow">AI &amp; Machine Learning Portfolio Artifact</p>
+      <h1>Machine Learning Algorithm Types &amp; Application Domains</h1>
+      <p class="subtitle">
+        A structured visual framework comparing 10 foundational and modern algorithms across
+        <strong>Supervised</strong> and <strong>Unsupervised</strong> paradigms within
+        <strong>Tabular Data</strong>, <strong>Computer Vision</strong>, <strong>NLP</strong>, and <strong>Generative AI</strong>.
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Visual Architecture Diagram: How Paradigms, Domains, and Algorithms Relate -->
+    <section class="taxonomy-section" aria-label="Algorithm Relationship Architecture">
+      <div class="section-header">
+        <h2>Conceptual Architecture &amp; Relationships</h2>
+        <p>How learning paradigms branch into specialized domains and model families</p>
+      </div>
+
+      <div class="taxonomy-grid">
+        <div class="paradigm-box supervised-border">
+          <div class="paradigm-tag supervised-badge">Supervised Learning (Labeled Data)</div>
+          <p class="paradigm-desc">Learns an input-to-output mapping <em>f(x) &rarr; y</em> using ground-truth labels for prediction and classification.</p>
+          <div class="domain-branches">
+            <div class="branch-item">
+              <strong>Tabular Data:</strong> Linear/Logistic Regression, Decision Trees, Random Forests, Gradient Boosting, SVM
+            </div>
+            <div class="branch-item">
+              <strong>Computer Vision:</strong> Convolutional Neural Networks (CNNs)
+            </div>
+            <div class="branch-item">
+              <strong>Natural Language Processing:</strong> Transformers (BERT)
+            </div>
+          </div>
+        </div>
+
+        <div class="paradigm-box unsupervised-border">
+          <div class="paradigm-tag unsupervised-badge">Unsupervised &amp; Generative Learning (Unlabeled Data)</div>
+          <p class="paradigm-desc">Discovers latent structure, clusters, compressed manifolds, or probability distributions <em>P(x)</em> without manual labels.</p>
+          <div class="domain-branches">
+            <div class="branch-item">
+              <strong>Tabular Data:</strong> K-Means Clustering, Principal Component Analysis (PCA)
+            </div>
+            <div class="branch-item">
+              <strong>Generative AI:</strong> Diffusion Models, GANs &amp; Autoregressive GPT Transformers
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Controls -->
+    <section class="controls-bar" aria-label="Filter and View Controls">
+      <div class="filter-group">
+        <span class="filter-label">Domain:</span>
+        <button class="filter-btn active" data-domain="all">All Domains (10)</button>
+        <button class="filter-btn" data-domain="Tabular Data">Tabular Data</button>
+        <button class="filter-btn" data-domain="Computer Vision">Computer Vision</button>
+        <button class="filter-btn" data-domain="NLP">NLP</button>
+        <button class="filter-btn" data-domain="Generative AI">Generative AI</button>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">Learning Type:</span>
+        <button class="type-btn active" data-type="all">All Types</button>
+        <button class="type-btn" data-type="Supervised">Supervised</button>
+        <button class="type-btn" data-type="Unsupervised">Unsupervised</button>
+      </div>
+
+      <div class="view-toggle">
+        <button id="btn-grid-view" class="view-btn active" aria-pressed="true">Card Framework</button>
+        <button id="btn-matrix-view" class="view-btn" aria-pressed="false">Comparison Matrix</button>
+      </div>
+    </section>
+
+    <!-- Card Framework View -->
+    <section id="cards-container" class="cards-grid" aria-label="Algorithm Cards"></section>
+
+    <!-- Comparative Relationship Matrix View -->
+    <section id="matrix-container" class="matrix-wrapper hidden" aria-label="Algorithm Comparison Matrix">
+      <div class="table-scroll">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Algorithm</th>
+              <th>Algorithm Type</th>
+              <th>Application Domain</th>
+              <th>Core Mechanism</th>
+              <th>Primary Real-World Use Cases</th>
+              <th>Key Trade-Off / Differentiator</th>
+            </tr>
+          </thead>
+          <tbody id="matrix-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Detail Modal -->
+  <div id="modal-overlay" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <button id="modal-close" class="modal-close" aria-label="Close modal">&times;</button>
+      <div id="modal-badges" class="card-badges"></div>
+      <h3 id="modal-title"></h3>
+      <div class="modal-body">
+        <div class="modal-block">
+          <h4>How It Works</h4>
+          <p id="modal-explanation"></p>
+        </div>
+        <div class="modal-block">
+          <h4>Real-World Applications &amp; Use Cases</h4>
+          <p id="modal-usecases"></p>
+        </div>
+        <div class="modal-block">
+          <h4>How It Relates &amp; Differs from Other Models</h4>
+          <p id="modal-comparison"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Machine Learning Algorithm Types Visual Framework &bull; Interactive Portfolio Artifact</p>
+    </div>
+  </footer>
+
+  <script>
+    const algorithms = [
+      {
+        name: "Linear & Logistic Regression",
+        type: "Supervised",
+        domain: "Tabular Data",
+        explanation: "Models relationships between input features and a target variable by fitting a linear hyperplane (continuous output) or sigmoid probability boundary (binary classification).",
+        useCases: "Real estate price forecasting, customer churn probability scoring, and baseline medical risk estimation.",
+        comparison: "Serves as the simplest interpretable baseline; unlike tree-based models, it assumes linear feature boundaries and struggles with complex non-linear interactions without feature engineering."
+      },
+      {
+        name: "Decision Trees",
+        type: "Supervised",
+        domain: "Tabular Data",
+        explanation: "Recursively splits tabular data into hierarchical if-then decision branches using metrics like Gini impurity or information gain to minimize prediction error.",
+        useCases: "Loan approval rule engines, clinical triage protocols, and transparent credit-risk screening.",
+        comparison: "Highly interpretable and handles non-linear rules naturally, but single trees easily overfit noisy data—motivating ensemble methods like Random Forests."
+      },
+      {
+        name: "Random Forests",
+        type: "Supervised",
+        domain: "Tabular Data",
+        explanation: "Constructs an ensemble of hundreds of decorrelated decision trees using bootstrap aggregation (bagging) and random feature subsets, averaging their outputs for stability.",
+        useCases: "Financial fraud detection, predictive equipment maintenance, and e-commerce demand forecasting.",
+        comparison: "Dramatically reduces variance and overfitting compared to a single Decision Tree while retaining strong out-of-the-box accuracy on structured tabular datasets."
+      },
+      {
+        name: "Gradient Boosting (XGBoost / LightGBM)",
+        type: "Supervised",
+        domain: "Tabular Data",
+        explanation: "Builds decision trees sequentially where each new tree is trained specifically to correct the residual errors made by the preceding ensemble of trees.",
+        useCases: "Algorithmic credit underwriting, insurance claim pricing, and high-stakes tabular predictive analytics.",
+        comparison: "Differs from Random Forests by training trees sequentially (reducing bias) rather than independently in parallel (reducing variance), often achieving top tabular accuracy."
+      },
+      {
+        name: "Support Vector Machines (SVM)",
+        type: "Supervised",
+        domain: "Tabular Data",
+        explanation: "Finds the optimal separating hyperplane that maximizes the geometric margin between classes, using kernel functions to project data into higher-dimensional spaces.",
+        useCases: "Bioinformatics gene-expression classification, handwriting recognition, and high-dimensional anomaly classification.",
+        comparison: "Excels in high-dimensional, small-to-medium datasets with clear margins, whereas ensemble trees scale better to massive tabular datasets with mixed feature types."
+      },
+      {
+        name: "K-Means Clustering",
+        type: "Unsupervised",
+        domain: "Tabular Data",
+        explanation: "Partitions unlabeled data into K distinct groups by iteratively assigning points to the nearest cluster centroid and recalculating centroid positions until convergence.",
+        useCases: "Customer behavioral segmentation, retail store grouping, and regional logistics zone optimization.",
+        comparison: "Unlike supervised classifiers, K-Means requires no target labels; it discovers natural groupings based on Euclidean distance rather than predicting predefined categories."
+      },
+      {
+        name: "Principal Component Analysis (PCA)",
+        type: "Unsupervised",
+        domain: "Tabular Data",
+        explanation: "Transforms correlated high-dimensional variables into a smaller set of orthogonal principal components that preserve maximum dataset variance.",
+        useCases: "Noise filtering in sensor telemetry, high-dimensional data visualization, and preprocessing compression before downstream modeling.",
+        comparison: "Unlike K-Means which groups rows (observations), PCA compresses columns (features), making complex tabular datasets faster and cleaner for other models to process."
+      },
+      {
+        name: "Convolutional Neural Networks (CNNs)",
+        type: "Supervised",
+        domain: "Computer Vision",
+        explanation: "Applies learnable spatial convolutional filters and pooling layers across pixel grids to hierarchically extract edges, textures, shapes, and complete objects.",
+        useCases: "Autonomous vehicle object detection, radiology tumor screening (MRI/X-ray), and automated manufacturing defect inspection.",
+        comparison: "Unlike tabular algorithms that treat columns independently, CNNs exploit 2D spatial locality and translation invariance, making them purpose-built for visual imagery."
+      },
+      {
+        name: "Transformers (BERT & Encoder Models)",
+        type: "Supervised",
+        domain: "NLP",
+        explanation: "Uses multi-head self-attention mechanisms to weigh contextual relationships between every word in a sequence simultaneously, capturing deep bidirectional semantics.",
+        useCases: "Enterprise sentiment analysis, legal contract classification, semantic search, and named-entity recognition.",
+        comparison: "Replaces older sequential recurrent networks by processing entire text sequences in parallel, enabling fine-tuned supervised accuracy across language understanding tasks."
+      },
+      {
+        name: "Diffusion Models, GANs & GPT",
+        type: "Unsupervised",
+        domain: "Generative AI",
+        explanation: "Learns underlying data distributions via self-supervised next-token prediction (GPT), adversarial generator-discriminator games (GANs), or iterative denoising (Diffusion) to synthesize novel outputs.",
+        useCases: "Photorealistic image generation (Stable Diffusion), synthetic training data creation (GANs), and code/text synthesis (GPT).",
+        comparison: "Unlike discriminative supervised models that classify or score existing inputs, generative models create brand-new, coherent text, images, and multimodal artifacts."
+      }
+    ];
+
+    let activeDomain = "all";
+    let activeType = "all";
+
+    const cardsContainer = document.getElementById("cards-container");
+    const matrixBody = document.getElementById("matrix-body");
+    const modalOverlay = document.getElementById("modal-overlay");
+
+    function getFilteredAlgorithms() {
+      return algorithms.filter((algo) => {
+        const matchDomain = activeDomain === "all" || algo.domain === activeDomain;
+        const matchType = activeType === "all" || algo.type === activeType;
+        return matchDomain && matchType;
+      });
+    }
+
+    function render() {
+      const filtered = getFilteredAlgorithms();
+
+      // Render Cards
+      cardsContainer.innerHTML = filtered.map((algo, idx) => {
+        const badgeClass = algo.type === "Supervised" ? "supervised-badge" : "unsupervised-badge";
+        return `
+          <article class="algo-card" tabindex="0" data-index="${algorithms.indexOf(algo)}" aria-label="${algo.name}">
+            <div class="card-badges">
+              <span class="badge ${badgeClass}">${algo.type}</span>
+              <span class="badge domain-badge">${algo.domain}</span>
+            </div>
+            <h3>${algo.name}</h3>
+            <div class="card-field">
+              <span class="field-label">How It Works</span>
+              <p>${algo.explanation}</p>
+            </div>
+            <div class="card-field">
+              <span class="field-label">Example Use Cases</span>
+              <p>${algo.useCases}</p>
+            </div>
+            <div class="card-footer">
+              <span class="inspect-link">Inspect Relationships &amp; Details &rarr;</span>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      // Render Matrix Rows
+      matrixBody.innerHTML = filtered.map((algo) => {
+        const badgeClass = algo.type === "Supervised" ? "supervised-badge" : "unsupervised-badge";
+        return `
+          <tr>
+            <td><strong>${algo.name}</strong></td>
+            <td><span class="badge ${badgeClass}">${algo.type}</span></td>
+            <td><span class="badge domain-badge">${algo.domain}</span></td>
+            <td>${algo.explanation}</td>
+            <td>${algo.useCases}</td>
+            <td>${algo.comparison}</td>
+          </tr>
+        `;
+      }).join("");
+
+      // Attach card click listeners
+      document.querySelectorAll(".algo-card").forEach((card) => {
+        card.addEventListener("click", () => openModal(algorithms[card.dataset.index]));
+        card.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            openModal(algorithms[card.dataset.index]);
+          }
+        });
+      });
+    }
+
+    function openModal(algo) {
+      const badgeClass = algo.type === "Supervised" ? "supervised-badge" : "unsupervised-badge";
+      document.getElementById("modal-badges").innerHTML = `
+        <span class="badge ${badgeClass}">${algo.type}</span>
+        <span class="badge domain-badge">${algo.domain}</span>
+      `;
+      document.getElementById("modal-title").textContent = algo.name;
+      document.getElementById("modal-explanation").textContent = algo.explanation;
+      document.getElementById("modal-usecases").textContent = algo.useCases;
+      document.getElementById("modal-comparison").textContent = algo.comparison;
+      modalOverlay.classList.remove("hidden");
+    }
+
+    function closeModal() {
+      modalOverlay.classList.add("hidden");
+    }
+
+    // Filter listeners
+    document.querySelectorAll(".filter-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeDomain = btn.dataset.domain;
+        render();
+      });
+    });
+
+    document.querySelectorAll(".type-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".type-btn").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeType = btn.dataset.type;
+        render();
+      });
+    });
+
+    // View toggles
+    const btnGrid = document.getElementById("btn-grid-view");
+    const btnMatrix = document.getElementById("btn-matrix-view");
+    const matrixContainer = document.getElementById("matrix-container");
+
+    btnGrid.addEventListener("click", () => {
+      btnGrid.classList.add("active");
+      btnMatrix.classList.remove("active");
+      cardsContainer.classList.remove("hidden");
+      matrixContainer.classList.add("hidden");
+    });
+
+    btnMatrix.addEventListener("click", () => {
+      btnMatrix.classList.add("active");
+      btnGrid.classList.remove("active");
+      matrixContainer.classList.remove("hidden");
+      cardsContainer.classList.add("hidden");
+    });
+
+    // Modal close events
+    document.getElementById("modal-close").addEventListener("click", closeModal);
+    modalOverlay.addEventListener("click", (e) => {
+      if (e.target === modalOverlay) closeModal();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeModal();
+    });
+
+    render();
+  </script>
+</body>
+</html>
