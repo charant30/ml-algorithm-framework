@@ -4,33 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Machine Learning Algorithm Types — Visual Framework</title>
-  <meta name="description" content="Portfolio artifact: visual framework of 10 machine learning algorithms across supervised/unsupervised learning and tabular, computer vision, NLP, and generative AI domains." />
+  <meta name="description" content="Visual framework of machine learning algorithms across supervised, unsupervised, and generative learning within tabular data, computer vision, NLP, and generative AI." />
+  <meta property="og:title" content="Machine Learning Algorithm Types & Application Domains" />
+  <meta property="og:description" content="Interactive visual framework comparing algorithms across tabular data, computer vision, NLP, and generative AI." />
+  <meta property="og:image" content="assets/hero-architecture.jpg" />
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#framework">Skip to algorithm framework</a>
+
   <header class="hero">
     <div class="container hero-layout">
       <div class="hero-copy">
         <h1>Machine Learning Algorithm Types &amp; Application Domains</h1>
         <p class="subtitle">
-          A structured visual framework comparing 10 foundational and modern algorithms across
-          <strong>Supervised</strong> and <strong>Unsupervised</strong> paradigms within
+          A structured visual framework comparing foundational and modern algorithms across
+          <strong>Supervised</strong>, <strong>Unsupervised</strong>, and <strong>Generative</strong> learning within
           <strong>Tabular Data</strong>, <strong>Computer Vision</strong>, <strong>NLP</strong>, and <strong>Generative AI</strong>.
         </p>
         <div class="hero-accent-line" aria-hidden="true"></div>
-        <ul class="hero-checklist" aria-label="Assignment coverage">
-          <li>10 algorithms classified by learning type</li>
-          <li>Mapped to four primary AI/ML domains</li>
-          <li>Real-world use cases + relationship comparisons</li>
-        </ul>
+        <div class="hero-legend" aria-label="Learning type legend">
+          <span class="legend-chip supervised-badge">Supervised</span>
+          <span class="legend-chip unsupervised-badge">Unsupervised</span>
+          <span class="legend-chip generative-badge">Generative</span>
+        </div>
       </div>
       <figure class="hero-visual">
         <img
           src="assets/hero-architecture.jpg"
-          alt="Visual architecture diagram branching machine learning paradigms into tabular data, computer vision, NLP, and generative AI domains"
+          alt="Architecture diagram connecting learning paradigms to tabular, vision, language, and generative domains"
           width="960"
           height="540"
           loading="eager"
@@ -40,55 +46,53 @@
   </header>
 
   <main class="container">
-    <!-- Domain Atlas: required application domains -->
     <section class="domain-atlas" aria-label="Primary AI and ML Application Domains">
       <div class="section-header">
         <h2>Primary Application Domains</h2>
-        <p>Algorithms are organized across the four major AI/ML domains emphasized in this portfolio artifact</p>
+        <p>Explore the four major AI/ML domains, then drill into the algorithms built for each</p>
       </div>
       <div class="domain-atlas-grid">
         <article class="domain-tile" data-domain="Tabular Data">
-          <img src="assets/domain-tabular.jpg" alt="Illustration of tabular data with spreadsheet grids and charts" width="640" height="360" loading="lazy" />
+          <img src="assets/domain-tabular.jpg" alt="Tabular data illustration with spreadsheet grids and charts" width="640" height="360" loading="lazy" />
           <div class="domain-tile-body">
             <h3>Tabular Data</h3>
             <p>Structured rows and columns for prediction, ranking, clustering, and dimensionality reduction.</p>
-            <span class="domain-count">7 algorithms</span>
+            <span class="domain-count" data-count-domain="Tabular Data">7 algorithms</span>
           </div>
         </article>
         <article class="domain-tile" data-domain="Computer Vision">
-          <img src="assets/domain-vision.jpg" alt="Illustration of computer vision with camera eye and image tiles" width="640" height="360" loading="lazy" />
+          <img src="assets/domain-vision.jpg" alt="Computer vision illustration with camera eye and image feature maps" width="640" height="360" loading="lazy" />
           <div class="domain-tile-body">
             <h3>Computer Vision</h3>
             <p>Spatial pattern recognition over pixels for detection, screening, and visual inspection.</p>
-            <span class="domain-count">1 algorithm family</span>
+            <span class="domain-count" data-count-domain="Computer Vision">2 algorithms</span>
           </div>
         </article>
         <article class="domain-tile" data-domain="NLP">
-          <img src="assets/domain-nlp.jpg" alt="Illustration of natural language processing with tokens and attention links" width="640" height="360" loading="lazy" />
+          <img src="assets/domain-nlp.jpg" alt="Natural language processing illustration with tokens and attention links" width="640" height="360" loading="lazy" />
           <div class="domain-tile-body">
             <h3>Natural Language Processing</h3>
             <p>Contextual language understanding for classification, search, and entity extraction.</p>
-            <span class="domain-count">1 algorithm family</span>
+            <span class="domain-count" data-count-domain="NLP">1 algorithm</span>
           </div>
         </article>
         <article class="domain-tile" data-domain="Generative AI">
-          <img src="assets/domain-generative.jpg" alt="Illustration of generative AI synthesizing images and text from a neural core" width="640" height="360" loading="lazy" />
+          <img src="assets/domain-generative.jpg" alt="Generative AI illustration synthesizing images and text from a neural core" width="640" height="360" loading="lazy" />
           <div class="domain-tile-body">
             <h3>Generative AI</h3>
             <p>Distribution learning that creates new text, images, and multimodal artifacts.</p>
-            <span class="domain-count">1 algorithm family</span>
+            <span class="domain-count" data-count-domain="Generative AI">3 algorithms</span>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- Learning style overview -->
-    <section class="learning-styles" aria-label="Supervised and Unsupervised Learning">
+    <section class="learning-styles" aria-label="Learning Styles">
       <div class="section-header">
         <h2>Learning Styles</h2>
-        <p>Every algorithm below is labeled Supervised or Unsupervised so relationships across paradigms stay clear</p>
+        <p>Algorithms are labeled by how they learn from data—supervised, unsupervised, or generative</p>
       </div>
-      <div class="learning-style-grid">
+      <div class="learning-style-grid three-col">
         <article class="style-card supervised-border">
           <div class="style-icon" aria-hidden="true">
             <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -98,21 +102,9 @@
               <path d="M38 45h12M38 50h8" stroke="#1a56db" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </div>
-          <div class="paradigm-tag supervised-badge">Supervised Learning (Labeled Data)</div>
-          <p class="paradigm-desc">Learns an input-to-output mapping <em>f(x) &rarr; y</em> using ground-truth labels for prediction and classification.</p>
-          <div class="domain-branches">
-            <div class="branch-item">
-              <strong>Tabular Data:</strong> Linear/Logistic Regression, Decision Trees, Random Forests, Gradient Boosting, SVM
-            </div>
-            <div class="branch-item">
-              <strong>Computer Vision:</strong> Convolutional Neural Networks (CNNs)
-            </div>
-            <div class="branch-item">
-              <strong>Natural Language Processing:</strong> Transformers (BERT)
-            </div>
-          </div>
+          <div class="paradigm-tag supervised-badge">Supervised</div>
+          <p class="paradigm-desc">Learns <em>f(x) &rarr; y</em> from labeled examples for prediction and classification.</p>
         </article>
-
         <article class="style-card unsupervised-border">
           <div class="style-icon" aria-hidden="true">
             <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -122,25 +114,105 @@
               <path d="M28 28l4 8M40 27l-3 8" stroke="#9a6b16" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </div>
-          <div class="paradigm-tag unsupervised-badge">Unsupervised &amp; Generative Learning (Unlabeled Data)</div>
-          <p class="paradigm-desc">Discovers latent structure, clusters, compressed manifolds, or probability distributions <em>P(x)</em> without manual labels.</p>
-          <div class="domain-branches">
-            <div class="branch-item">
-              <strong>Tabular Data:</strong> K-Means Clustering, Principal Component Analysis (PCA)
-            </div>
-            <div class="branch-item">
-              <strong>Generative AI:</strong> Diffusion Models, GANs &amp; Autoregressive GPT Transformers
-            </div>
+          <div class="paradigm-tag unsupervised-badge">Unsupervised</div>
+          <p class="paradigm-desc">Finds structure in unlabeled data via clustering and dimensionality reduction.</p>
+        </article>
+        <article class="style-card generative-border">
+          <div class="style-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M32 8l5 12 13 5-13 5-5 13-5-13-13-5 13-5z" fill="#ffedd5" stroke="#b45309" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M48 40c4 2 7 7 8 14M16 40c-4 2-7 7-8 14" stroke="#b45309" stroke-width="2" stroke-linecap="round"/>
+            </svg>
           </div>
+          <div class="paradigm-tag generative-badge">Generative</div>
+          <p class="paradigm-desc">Learns data distributions (often self-supervised) to synthesize new content.</p>
         </article>
       </div>
     </section>
 
-    <!-- Interactive Controls -->
+    <section class="relationship-map" aria-label="Algorithm Relationship Map">
+      <div class="section-header">
+        <h2>How Algorithms Relate</h2>
+        <p>Click a node to filter the framework—from learning style to domain to model family</p>
+      </div>
+      <div class="map-shell">
+        <svg class="relation-svg" viewBox="0 0 1000 420" role="img" aria-label="Interactive relationship map from learning styles through domains to algorithms">
+          <defs>
+            <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L6,3 L0,6 Z" fill="#94a3b8"></path>
+            </marker>
+          </defs>
+          <line class="map-line" x1="160" y1="80" x2="360" y2="70" marker-end="url(#arrow)"></line>
+          <line class="map-line" x1="160" y1="80" x2="360" y2="160" marker-end="url(#arrow)"></line>
+          <line class="map-line" x1="160" y1="210" x2="360" y2="70" marker-end="url(#arrow)"></line>
+          <line class="map-line" x1="160" y1="340" x2="360" y2="250" marker-end="url(#arrow)"></line>
+          <line class="map-line" x1="160" y1="340" x2="360" y2="340" marker-end="url(#arrow)"></line>
+          <line class="map-line" x1="480" y1="70" x2="680" y2="40" marker-end="url(#arrow)"></line>
+          <line class="map-line" x1="480" y1="70" x2="680" y2="100" marker-end="url(#arrow)"></line>
+          <line class="map-line" x1="480" y1="160" x2="680" y2="160" marker-end="url(#arrow)"></line>
+          <line class="map-line" x1="480" y1="250" x2="680" y2="250" marker-end="url(#arrow)"></line>
+          <line class="map-line" x1="480" y1="340" x2="680" y2="310" marker-end="url(#arrow)"></line>
+          <line class="map-line" x1="480" y1="340" x2="680" y2="370" marker-end="url(#arrow)"></line>
+
+          <g class="map-node type-node" data-type="Supervised" tabindex="0" role="button" aria-label="Filter Supervised">
+            <rect x="40" y="50" width="140" height="60" rx="12"></rect>
+            <text x="110" y="85" text-anchor="middle">Supervised</text>
+          </g>
+          <g class="map-node type-node" data-type="Unsupervised" tabindex="0" role="button" aria-label="Filter Unsupervised">
+            <rect x="40" y="180" width="140" height="60" rx="12"></rect>
+            <text x="110" y="215" text-anchor="middle">Unsupervised</text>
+          </g>
+          <g class="map-node type-node" data-type="Generative" tabindex="0" role="button" aria-label="Filter Generative">
+            <rect x="40" y="310" width="140" height="60" rx="12"></rect>
+            <text x="110" y="345" text-anchor="middle">Generative</text>
+          </g>
+
+          <g class="map-node domain-node" data-domain="Tabular Data" tabindex="0" role="button" aria-label="Filter Tabular Data">
+            <rect x="360" y="40" width="140" height="60" rx="12"></rect>
+            <text x="430" y="75" text-anchor="middle">Tabular Data</text>
+          </g>
+          <g class="map-node domain-node" data-domain="Computer Vision" tabindex="0" role="button" aria-label="Filter Computer Vision">
+            <rect x="360" y="130" width="140" height="60" rx="12"></rect>
+            <text x="430" y="165" text-anchor="middle">Vision</text>
+          </g>
+          <g class="map-node domain-node" data-domain="NLP" tabindex="0" role="button" aria-label="Filter NLP">
+            <rect x="360" y="220" width="140" height="60" rx="12"></rect>
+            <text x="430" y="255" text-anchor="middle">NLP</text>
+          </g>
+          <g class="map-node domain-node" data-domain="Generative AI" tabindex="0" role="button" aria-label="Filter Generative AI">
+            <rect x="360" y="310" width="140" height="60" rx="12"></rect>
+            <text x="430" y="345" text-anchor="middle">Generative AI</text>
+          </g>
+
+          <g class="map-node leaf-node" data-domain="Tabular Data" tabindex="0" role="button" aria-label="Show tabular algorithms">
+            <rect x="680" y="15" width="260" height="50" rx="10"></rect>
+            <text x="810" y="45" text-anchor="middle">Regression · Trees · Ensembles · SVM</text>
+          </g>
+          <g class="map-node leaf-node" data-domain="Tabular Data" data-type="Unsupervised" tabindex="0" role="button" aria-label="Show unsupervised tabular algorithms">
+            <rect x="680" y="75" width="260" height="50" rx="10"></rect>
+            <text x="810" y="105" text-anchor="middle">K-Means · PCA</text>
+          </g>
+          <g class="map-node leaf-node" data-domain="Computer Vision" tabindex="0" role="button" aria-label="Show computer vision algorithms">
+            <rect x="680" y="135" width="260" height="50" rx="10"></rect>
+            <text x="810" y="165" text-anchor="middle">CNNs · YOLO Detectors</text>
+          </g>
+          <g class="map-node leaf-node" data-domain="NLP" tabindex="0" role="button" aria-label="Show NLP algorithms">
+            <rect x="680" y="225" width="260" height="50" rx="10"></rect>
+            <text x="810" y="255" text-anchor="middle">BERT / Encoder Transformers</text>
+          </g>
+          <g class="map-node leaf-node" data-domain="Generative AI" tabindex="0" role="button" aria-label="Show generative algorithms">
+            <rect x="680" y="295" width="260" height="50" rx="10"></rect>
+            <text x="810" y="325" text-anchor="middle">Diffusion · GANs · GPT</text>
+          </g>
+        </svg>
+        <p class="map-hint">Tip: use the map, domain tiles, or filter bar—filters stay in sync.</p>
+      </div>
+    </section>
+
     <section class="controls-bar" aria-label="Filter and View Controls">
       <div class="filter-group">
         <span class="filter-label">Domain:</span>
-        <button class="filter-btn active" data-domain="all">All Domains (10)</button>
+        <button class="filter-btn active" data-domain="all" id="btn-domain-all">All Domains</button>
         <button class="filter-btn" data-domain="Tabular Data">Tabular Data</button>
         <button class="filter-btn" data-domain="Computer Vision">Computer Vision</button>
         <button class="filter-btn" data-domain="NLP">NLP</button>
@@ -152,6 +224,7 @@
         <button class="type-btn active" data-type="all">All Types</button>
         <button class="type-btn" data-type="Supervised">Supervised</button>
         <button class="type-btn" data-type="Unsupervised">Unsupervised</button>
+        <button class="type-btn" data-type="Generative">Generative</button>
       </div>
 
       <div class="view-toggle">
@@ -160,15 +233,19 @@
       </div>
     </section>
 
-    <div class="framework-intro section-header">
+    <div class="framework-intro section-header" id="framework">
       <h2>Algorithm Visual Framework</h2>
-      <p>Each card includes algorithm type, application domain, a brief explanation, example use cases, and how the model relates to or differs from others</p>
+      <p>Each entry includes algorithm type, application domain, explanation, use cases, and how it relates to other models</p>
     </div>
 
-    <!-- Card Framework View -->
+    <p id="results-count" class="results-count" aria-live="polite"></p>
     <section id="cards-container" class="cards-grid" aria-label="Algorithm Cards"></section>
+    <div id="empty-state" class="empty-state hidden" role="status">
+      <h3>No algorithms match these filters</h3>
+      <p>Reset filters to view the full framework.</p>
+      <button type="button" id="btn-reset-filters">Reset Filters</button>
+    </div>
 
-    <!-- Comparative Relationship Matrix View -->
     <section id="matrix-container" class="matrix-wrapper hidden" aria-label="Algorithm Comparison Matrix">
       <div class="table-scroll">
         <table class="comparison-table">
@@ -188,11 +265,10 @@
     </section>
   </main>
 
-  <!-- Detail Modal -->
   <div id="modal-overlay" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal-card">
+    <div class="modal-card" tabindex="-1">
       <button id="modal-close" class="modal-close" aria-label="Close modal">&times;</button>
-      <div id="modal-media" class="modal-media" aria-hidden="true"></div>
+      <div id="modal-media" class="modal-media"></div>
       <div id="modal-badges" class="card-badges"></div>
       <h3 id="modal-title"></h3>
       <div class="modal-body">
@@ -230,6 +306,13 @@
       "Generative AI": "assets/domain-generative.jpg"
     };
 
+    const domainAlt = {
+      "Tabular Data": "Tabular data domain artwork",
+      "Computer Vision": "Computer vision domain artwork",
+      "NLP": "Natural language processing domain artwork",
+      "Generative AI": "Generative AI domain artwork"
+    };
+
     const icons = {
       regression: `<svg viewBox="0 0 72 48" fill="none" aria-hidden="true"><path d="M8 40 L28 28 L44 32 L64 10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="28" cy="28" r="3" fill="currentColor"/><circle cx="44" cy="32" r="3" fill="currentColor"/><circle cx="64" cy="10" r="3" fill="currentColor"/><path d="M8 8v32h56" stroke="currentColor" stroke-width="2" opacity=".35"/></svg>`,
       tree: `<svg viewBox="0 0 72 48" fill="none" aria-hidden="true"><rect x="28" y="4" width="16" height="10" rx="2" stroke="currentColor" stroke-width="2"/><path d="M36 14v8M20 22h32" stroke="currentColor" stroke-width="2"/><rect x="10" y="22" width="16" height="10" rx="2" stroke="currentColor" stroke-width="2"/><rect x="46" y="22" width="16" height="10" rx="2" stroke="currentColor" stroke-width="2"/><path d="M18 32v6M54 32v6" stroke="currentColor" stroke-width="2"/><rect x="10" y="38" width="16" height="8" rx="2" stroke="currentColor" stroke-width="2"/><rect x="46" y="38" width="16" height="8" rx="2" stroke="currentColor" stroke-width="2"/></svg>`,
@@ -239,8 +322,11 @@
       kmeans: `<svg viewBox="0 0 72 48" fill="none" aria-hidden="true"><circle cx="22" cy="18" r="10" stroke="currentColor" stroke-width="2" opacity=".45"/><circle cx="50" cy="30" r="12" stroke="currentColor" stroke-width="2" opacity=".45"/><circle cx="20" cy="16" r="2.5" fill="currentColor"/><circle cx="26" cy="22" r="2.5" fill="currentColor"/><circle cx="46" cy="26" r="2.5" fill="currentColor"/><circle cx="54" cy="34" r="2.5" fill="currentColor"/><circle cx="22" cy="18" r="3.5" stroke="currentColor" stroke-width="2"/><circle cx="50" cy="30" r="3.5" stroke="currentColor" stroke-width="2"/></svg>`,
       pca: `<svg viewBox="0 0 72 48" fill="none" aria-hidden="true"><ellipse cx="36" cy="24" rx="26" ry="14" stroke="currentColor" stroke-width="2" opacity=".35"/><ellipse cx="36" cy="24" rx="16" ry="8" stroke="currentColor" stroke-width="2" opacity=".55"/><path d="M12 36 L60 12" stroke="currentColor" stroke-width="2.5"/><path d="M28 10 L44 38" stroke="currentColor" stroke-width="2" opacity=".5"/><circle cx="36" cy="24" r="3" fill="currentColor"/></svg>`,
       cnn: `<svg viewBox="0 0 72 48" fill="none" aria-hidden="true"><rect x="6" y="8" width="22" height="22" rx="3" stroke="currentColor" stroke-width="2"/><rect x="12" y="14" width="8" height="8" stroke="currentColor" stroke-width="1.5"/><rect x="34" y="12" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2"/><rect x="54" y="16" width="10" height="10" rx="2" stroke="currentColor" stroke-width="2"/><path d="M28 19h6M48 19h6" stroke="currentColor" stroke-width="2"/><rect x="34" y="34" width="28" height="8" rx="2" stroke="currentColor" stroke-width="2"/></svg>`,
+      yolo: `<svg viewBox="0 0 72 48" fill="none" aria-hidden="true"><rect x="8" y="8" width="40" height="32" rx="3" stroke="currentColor" stroke-width="2"/><rect x="18" y="16" width="14" height="12" stroke="currentColor" stroke-width="2"/><rect x="40" y="22" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><circle cx="25" cy="22" r="2" fill="currentColor"/></svg>`,
       bert: `<svg viewBox="0 0 72 48" fill="none" aria-hidden="true"><circle cx="16" cy="24" r="5" stroke="currentColor" stroke-width="2"/><circle cx="36" cy="12" r="5" stroke="currentColor" stroke-width="2"/><circle cx="36" cy="36" r="5" stroke="currentColor" stroke-width="2"/><circle cx="56" cy="24" r="5" stroke="currentColor" stroke-width="2"/><path d="M21 22l10-8M21 26l10 8M41 14l10 8M41 34l10-8M36 17v14" stroke="currentColor" stroke-width="1.8" opacity=".7"/></svg>`,
-      gen: `<svg viewBox="0 0 72 48" fill="none" aria-hidden="true"><path d="M36 6l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><rect x="48" y="28" width="16" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 34c6-8 12-8 18 0s12 8 18 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`
+      diffusion: `<svg viewBox="0 0 72 48" fill="none" aria-hidden="true"><circle cx="16" cy="24" r="10" stroke="currentColor" stroke-width="2" opacity=".35"/><circle cx="34" cy="24" r="8" stroke="currentColor" stroke-width="2" opacity=".55"/><circle cx="50" cy="24" r="6" stroke="currentColor" stroke-width="2"/><path d="M24 24h6M40 24h5" stroke="currentColor" stroke-width="2"/></svg>`,
+      gan: `<svg viewBox="0 0 72 48" fill="none" aria-hidden="true"><rect x="8" y="12" width="22" height="24" rx="3" stroke="currentColor" stroke-width="2"/><rect x="42" y="12" width="22" height="24" rx="3" stroke="currentColor" stroke-width="2"/><path d="M30 24h12" stroke="currentColor" stroke-width="2"/><path d="M16 20h6M16 28h10M48 20h8M48 28h6" stroke="currentColor" stroke-width="1.8"/></svg>`,
+      gpt: `<svg viewBox="0 0 72 48" fill="none" aria-hidden="true"><path d="M10 34h12l4-20h8l4 12h8l4-8h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="58" cy="18" r="3" fill="currentColor"/></svg>`
     };
 
     const algorithms = [
@@ -313,8 +399,17 @@
         domain: "Computer Vision",
         icon: "cnn",
         explanation: "Applies learnable spatial convolutional filters and pooling layers across pixel grids to hierarchically extract edges, textures, shapes, and complete objects.",
-        useCases: "Autonomous vehicle object detection, radiology tumor screening (MRI/X-ray), and automated manufacturing defect inspection.",
+        useCases: "Image classification, radiology screening support, and automated manufacturing defect inspection.",
         comparison: "Unlike tabular algorithms that treat columns independently, CNNs exploit 2D spatial locality and translation invariance, making them purpose-built for visual imagery."
+      },
+      {
+        name: "YOLO Object Detectors",
+        type: "Supervised",
+        domain: "Computer Vision",
+        icon: "yolo",
+        explanation: "Performs single-shot object detection by predicting bounding boxes and class probabilities directly from full images in one forward pass.",
+        useCases: "Autonomous driving perception, retail shelf monitoring, and real-time video security analytics.",
+        comparison: "Unlike classification-focused CNNs that output a single label, YOLO localizes multiple objects with boxes, prioritizing speed for real-time detection pipelines."
       },
       {
         name: "Transformers (BERT & Encoder Models)",
@@ -326,22 +421,56 @@
         comparison: "Replaces older sequential recurrent networks by processing entire text sequences in parallel, enabling fine-tuned supervised accuracy across language understanding tasks."
       },
       {
-        name: "Diffusion Models, GANs & GPT",
-        type: "Unsupervised",
+        name: "Diffusion Models",
+        type: "Generative",
         domain: "Generative AI",
-        icon: "gen",
-        explanation: "Learns underlying data distributions via self-supervised next-token prediction (GPT), adversarial generator-discriminator games (GANs), or iterative denoising (Diffusion) to synthesize novel outputs.",
-        useCases: "Photorealistic image generation (Stable Diffusion), synthetic training data creation (GANs), and code/text synthesis (GPT).",
-        comparison: "Unlike discriminative supervised models that classify or score existing inputs, generative models create brand-new, coherent text, images, and multimodal artifacts."
+        icon: "diffusion",
+        explanation: "Learns to reverse a gradual noising process, iteratively denoising random noise into coherent samples that match the training distribution.",
+        useCases: "Photorealistic image generation (Stable Diffusion), design concept exploration, and synthetic visual data creation.",
+        comparison: "Unlike GANs, diffusion models optimize a denoising objective rather than an adversarial game, often improving sample stability and diversity at the cost of slower sampling."
+      },
+      {
+        name: "Generative Adversarial Networks (GANs)",
+        type: "Generative",
+        domain: "Generative AI",
+        icon: "gan",
+        explanation: "Trains a generator and discriminator in opposition so the generator learns to produce samples indistinguishable from real data.",
+        useCases: "Synthetic training-data augmentation, face and style synthesis, and anomaly detection via reconstruction quality.",
+        comparison: "Unlike diffusion models and GPT-style likelihood models, GANs use adversarial training that can produce sharp samples but may suffer from mode collapse and training instability."
+      },
+      {
+        name: "GPT / Autoregressive Language Models",
+        type: "Generative",
+        domain: "Generative AI",
+        icon: "gpt",
+        explanation: "Learns next-token prediction over large text corpora, then generates coherent sequences by sampling tokens one step at a time.",
+        useCases: "Code and document drafting, conversational assistants, and knowledge-work automation workflows.",
+        comparison: "Unlike encoder-only BERT models used mainly for understanding/classification, GPT-style decoders are optimized to generate open-ended text and multimodal continuations."
       }
     ];
 
     let activeDomain = "all";
     let activeType = "all";
+    let lastFocus = null;
 
     const cardsContainer = document.getElementById("cards-container");
     const matrixBody = document.getElementById("matrix-body");
     const modalOverlay = document.getElementById("modal-overlay");
+    const emptyState = document.getElementById("empty-state");
+    const resultsCount = document.getElementById("results-count");
+    const btnDomainAll = document.getElementById("btn-domain-all");
+
+    function badgeClassFor(type) {
+      if (type === "Supervised") return "supervised-badge";
+      if (type === "Unsupervised") return "unsupervised-badge";
+      return "generative-badge";
+    }
+
+    function teaser(text) {
+      const clean = text.replace(/\s+/g, " ").trim();
+      if (clean.length <= 120) return clean;
+      return clean.slice(0, 117).trimEnd() + "…";
+    }
 
     function getFilteredAlgorithms() {
       return algorithms.filter((algo) => {
@@ -351,55 +480,81 @@
       });
     }
 
+    function updateDomainCounts() {
+      document.querySelectorAll("[data-count-domain]").forEach((el) => {
+        const domain = el.dataset.countDomain;
+        const count = algorithms.filter((a) => a.domain === domain).length;
+        el.textContent = count === 1 ? "1 algorithm" : `${count} algorithms`;
+      });
+      btnDomainAll.textContent = `All Domains (${algorithms.length})`;
+    }
+
+    function syncFilterButtons() {
+      document.querySelectorAll(".filter-btn").forEach((b) => {
+        b.classList.toggle("active", b.dataset.domain === activeDomain);
+      });
+      document.querySelectorAll(".type-btn").forEach((b) => {
+        b.classList.toggle("active", b.dataset.type === activeType);
+      });
+    }
+
     function render() {
       const filtered = getFilteredAlgorithms();
 
-      cardsContainer.innerHTML = filtered.map((algo) => {
-        const badgeClass = algo.type === "Supervised" ? "supervised-badge" : "unsupervised-badge";
-        return `
-          <article class="algo-card" tabindex="0" data-index="${algorithms.indexOf(algo)}" data-type="${algo.type}" data-domain="${algo.domain}" aria-label="${algo.name}">
-            <div class="card-visual">
-              <img class="card-domain-art" src="${domainArt[algo.domain]}" alt="" loading="lazy" />
-              <div class="card-icon">${icons[algo.icon]}</div>
-            </div>
-            <div class="card-badges">
-              <span class="badge ${badgeClass}">${algo.type}</span>
-              <span class="badge domain-badge" data-domain="${algo.domain}">${algo.domain}</span>
-            </div>
-            <h3>${algo.name}</h3>
-            <div class="card-field">
-              <span class="field-label">Brief Explanation</span>
-              <p>${algo.explanation}</p>
-            </div>
-            <div class="card-field">
-              <span class="field-label">Example Applications / Use Cases</span>
-              <p>${algo.useCases}</p>
-            </div>
-            <div class="card-footer">
-              <span class="inspect-link">Inspect Relationships &amp; Details &rarr;</span>
-            </div>
-          </article>
-        `;
-      }).join("");
+      resultsCount.textContent = `Showing ${filtered.length} of ${algorithms.length} algorithms`;
 
-      matrixBody.innerHTML = filtered.map((algo) => {
-        const badgeClass = algo.type === "Supervised" ? "supervised-badge" : "unsupervised-badge";
-        return `
-          <tr>
-            <td>
-              <div class="matrix-algo">
-                <span class="matrix-icon">${icons[algo.icon]}</span>
-                <strong>${algo.name}</strong>
-              </div>
-            </td>
-            <td><span class="badge ${badgeClass}">${algo.type}</span></td>
-            <td><span class="badge domain-badge" data-domain="${algo.domain}">${algo.domain}</span></td>
-            <td>${algo.explanation}</td>
-            <td>${algo.useCases}</td>
-            <td>${algo.comparison}</td>
-          </tr>
-        `;
-      }).join("");
+      if (!filtered.length) {
+        cardsContainer.innerHTML = "";
+        matrixBody.innerHTML = "";
+        emptyState.classList.remove("hidden");
+        return;
+      }
+      emptyState.classList.add("hidden");
+
+      cardsContainer.innerHTML = filtered.map((algo) => `
+        <article class="algo-card" tabindex="0" data-index="${algorithms.indexOf(algo)}" data-type="${algo.type}" data-domain="${algo.domain}" aria-label="${algo.name}">
+          <div class="card-visual">
+            <img class="card-domain-art" src="${domainArt[algo.domain]}" alt="${domainAlt[algo.domain]}" loading="lazy" />
+            <div class="card-icon">${icons[algo.icon]}</div>
+          </div>
+          <div class="card-badges">
+            <span class="badge ${badgeClassFor(algo.type)}">${algo.type}</span>
+            <span class="badge domain-badge" data-domain="${algo.domain}">${algo.domain}</span>
+          </div>
+          <h3>${algo.name}</h3>
+          <div class="card-field">
+            <span class="field-label">Brief Explanation</span>
+            <p>${algo.explanation}</p>
+          </div>
+          <div class="card-field">
+            <span class="field-label">Example Applications / Use Cases</span>
+            <p>${algo.useCases}</p>
+          </div>
+          <div class="card-field differs-field">
+            <span class="field-label">Differs From / Relates To</span>
+            <p>${teaser(algo.comparison)}</p>
+          </div>
+          <div class="card-footer">
+            <span class="inspect-link">Inspect full relationship details &rarr;</span>
+          </div>
+        </article>
+      `).join("");
+
+      matrixBody.innerHTML = filtered.map((algo) => `
+        <tr class="matrix-row" tabindex="0" data-index="${algorithms.indexOf(algo)}" aria-label="Open details for ${algo.name}">
+          <td class="sticky-col">
+            <div class="matrix-algo">
+              <span class="matrix-icon">${icons[algo.icon]}</span>
+              <strong>${algo.name}</strong>
+            </div>
+          </td>
+          <td><span class="badge ${badgeClassFor(algo.type)}">${algo.type}</span></td>
+          <td><span class="badge domain-badge" data-domain="${algo.domain}">${algo.domain}</span></td>
+          <td>${algo.explanation}</td>
+          <td>${algo.useCases}</td>
+          <td>${algo.comparison}</td>
+        </tr>
+      `).join("");
 
       document.querySelectorAll(".algo-card").forEach((card) => {
         card.addEventListener("click", () => openModal(algorithms[card.dataset.index]));
@@ -410,16 +565,26 @@
           }
         });
       });
+
+      document.querySelectorAll(".matrix-row").forEach((row) => {
+        row.addEventListener("click", () => openModal(algorithms[row.dataset.index]));
+        row.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            openModal(algorithms[row.dataset.index]);
+          }
+        });
+      });
     }
 
     function openModal(algo) {
-      const badgeClass = algo.type === "Supervised" ? "supervised-badge" : "unsupervised-badge";
+      lastFocus = document.activeElement;
       document.getElementById("modal-media").innerHTML = `
-        <img src="${domainArt[algo.domain]}" alt="" />
+        <img src="${domainArt[algo.domain]}" alt="${domainAlt[algo.domain]}" />
         <div class="modal-icon">${icons[algo.icon]}</div>
       `;
       document.getElementById("modal-badges").innerHTML = `
-        <span class="badge ${badgeClass}">${algo.type}</span>
+        <span class="badge ${badgeClassFor(algo.type)}">${algo.type}</span>
         <span class="badge domain-badge" data-domain="${algo.domain}">${algo.domain}</span>
       `;
       document.getElementById("modal-title").textContent = algo.name;
@@ -429,45 +594,73 @@
       document.getElementById("modal-usecases").textContent = algo.useCases;
       document.getElementById("modal-comparison").textContent = algo.comparison;
       modalOverlay.classList.remove("hidden");
+      document.body.classList.add("modal-open");
+      document.getElementById("modal-close").focus();
     }
 
     function closeModal() {
       modalOverlay.classList.add("hidden");
+      document.body.classList.remove("modal-open");
+      if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
     }
 
-    function setDomainFilter(domain) {
+    function setFilters({ domain = activeDomain, type = activeType, scroll = true } = {}) {
       activeDomain = domain;
-      document.querySelectorAll(".filter-btn").forEach((b) => {
-        b.classList.toggle("active", b.dataset.domain === domain);
-      });
+      activeType = type;
+      syncFilterButtons();
       render();
-      document.getElementById("cards-container").scrollIntoView({ behavior: "smooth", block: "start" });
+      if (scroll) {
+        document.getElementById("framework").scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
+    function resetFilters() {
+      setFilters({ domain: "all", type: "all", scroll: true });
     }
 
     document.querySelectorAll(".filter-btn").forEach((btn) => {
-      btn.addEventListener("click", () => setDomainFilter(btn.dataset.domain));
+      btn.addEventListener("click", () => setFilters({ domain: btn.dataset.domain }));
+    });
+
+    document.querySelectorAll(".type-btn").forEach((btn) => {
+      btn.addEventListener("click", () => setFilters({ type: btn.dataset.type, scroll: false }));
     });
 
     document.querySelectorAll(".domain-tile").forEach((tile) => {
-      tile.addEventListener("click", () => setDomainFilter(tile.dataset.domain));
       tile.setAttribute("tabindex", "0");
       tile.setAttribute("role", "button");
+      const activate = () => setFilters({ domain: tile.dataset.domain, type: "all" });
+      tile.addEventListener("click", activate);
       tile.addEventListener("keydown", (e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
-          setDomainFilter(tile.dataset.domain);
+          activate();
         }
       });
     });
 
-    document.querySelectorAll(".type-btn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        document.querySelectorAll(".type-btn").forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-        activeType = btn.dataset.type;
-        render();
+    document.querySelectorAll(".map-node").forEach((node) => {
+      const activate = () => {
+        const domain = node.dataset.domain || "all";
+        const type = node.dataset.type || "all";
+        if (node.classList.contains("type-node")) {
+          setFilters({ domain: "all", type });
+        } else if (node.dataset.type && node.dataset.domain) {
+          setFilters({ domain, type });
+        } else {
+          setFilters({ domain, type: "all" });
+        }
+      };
+      node.addEventListener("click", activate);
+      node.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          activate();
+        }
       });
     });
+
+    document.getElementById("btn-reset-filters").addEventListener("click", resetFilters);
 
     const btnGrid = document.getElementById("btn-grid-view");
     const btnMatrix = document.getElementById("btn-matrix-view");
@@ -495,10 +688,30 @@
     modalOverlay.addEventListener("click", (e) => {
       if (e.target === modalOverlay) closeModal();
     });
+
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeModal();
+      if (e.key === "Escape" && !modalOverlay.classList.contains("hidden")) {
+        closeModal();
+        return;
+      }
+      if (modalOverlay.classList.contains("hidden")) return;
+      if (e.key !== "Tab") return;
+      const focusables = modalOverlay.querySelectorAll("button, [href], input, select, textarea, [tabindex]:not([tabindex='-1'])");
+      const list = Array.from(focusables).filter((el) => !el.hasAttribute("disabled"));
+      if (!list.length) return;
+      const first = list[0];
+      const last = list[list.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     });
 
+    updateDomainCounts();
+    syncFilterButtons();
     render();
   </script>
 </body>
