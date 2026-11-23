@@ -271,55 +271,107 @@ body {
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 1rem 1rem 0.75rem;
+  padding: 1.15rem 1.15rem 0.85rem;
   box-shadow: var(--shadow-sm);
   overflow-x: auto;
 }
 
-.relation-svg {
+.flow-map {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.9fr) 28px minmax(180px, 1.1fr) 28px minmax(220px, 1.35fr);
+  gap: 0.65rem;
+  align-items: stretch;
+  min-width: 760px;
+}
+
+.flow-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.flow-col-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.15rem;
+}
+
+.flow-node {
   width: 100%;
-  min-width: 780px;
-  height: auto;
+  text-align: left;
+  background: #f8fafc;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  padding: 0.85rem 0.95rem;
+  color: var(--navy-secondary);
+  font-weight: 650;
+  font-size: 0.92rem;
+  line-height: 1.35;
+  box-shadow: none;
+}
+
+.flow-node:hover,
+.flow-node:focus-visible {
+  background: #fff;
+  border-color: var(--accent-blue);
+  transform: none;
+}
+
+.flow-node .flow-sub {
   display: block;
+  margin-top: 0.28rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
 }
 
-.map-line {
-  stroke: #94a3b8;
-  stroke-width: 1.8;
-  opacity: 0.7;
+.flow-node.type-node.supervised-border {
+  border-top-width: 3px;
+  border-top-color: var(--accent-blue);
 }
 
-.map-node rect {
-  fill: #f8fafc;
-  stroke: var(--border-strong);
-  stroke-width: 1.5;
-  transition: fill 0.2s ease, stroke 0.2s ease;
+.flow-node.type-node.unsupervised-border {
+  border-top-width: 3px;
+  border-top-color: var(--accent-gold);
 }
 
-.map-node text {
-  fill: var(--navy-secondary);
-  font-size: 14px;
-  font-family: "Source Sans 3", sans-serif;
-  font-weight: 600;
-  pointer-events: none;
+.flow-node.type-node.generative-border {
+  border-top-width: 3px;
+  border-top-color: var(--accent-gen);
 }
 
-.map-node {
-  cursor: pointer;
+.flow-arrows {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 1.6rem;
 }
 
-.map-node:hover rect,
-.map-node:focus rect {
-  fill: #eef4ff;
-  stroke: var(--accent-blue);
+.flow-arrows span {
+  width: 18px;
+  height: 2px;
+  background: #94a3b8;
+  position: relative;
+  border-radius: 999px;
 }
 
-.type-node[data-type="Supervised"] rect { stroke: var(--accent-blue); }
-.type-node[data-type="Unsupervised"] rect { stroke: var(--accent-gold); }
-.type-node[data-type="Generative"] rect { stroke: var(--accent-gen); }
+.flow-arrows span::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 6px solid #94a3b8;
+}
 
 .map-hint {
-  margin: 0.35rem 0 0.25rem;
+  margin: 0.75rem 0 0.15rem;
   font-size: 0.82rem;
   color: var(--text-muted);
   text-align: center;
@@ -442,8 +494,12 @@ body {
   border-top: 3px solid var(--accent-gen);
 }
 
-.supervised-border::before,
-.unsupervised-border::before {
+.style-card.supervised-border::before,
+.paradigm-box.supervised-border::before,
+.style-card.unsupervised-border::before,
+.paradigm-box.unsupervised-border::before,
+.style-card.generative-border::before,
+.paradigm-box.generative-border::before {
   content: "";
   position: absolute;
   inset: 0 auto auto 0;
@@ -453,12 +509,19 @@ body {
   opacity: 0.55;
 }
 
-.supervised-border::before {
+.style-card.supervised-border::before,
+.paradigm-box.supervised-border::before {
   background: radial-gradient(ellipse at top left, rgba(26, 86, 219, 0.12), transparent 70%);
 }
 
-.unsupervised-border::before {
+.style-card.unsupervised-border::before,
+.paradigm-box.unsupervised-border::before {
   background: radial-gradient(ellipse at top left, rgba(154, 107, 22, 0.12), transparent 70%);
+}
+
+.style-card.generative-border::before,
+.paradigm-box.generative-border::before {
+  background: radial-gradient(ellipse at top left, rgba(180, 83, 9, 0.12), transparent 70%);
 }
 
 .paradigm-tag {

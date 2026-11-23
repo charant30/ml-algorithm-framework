@@ -136,77 +136,36 @@
         <p>Click a node to filter the framework—from learning style to domain to model family</p>
       </div>
       <div class="map-shell">
-        <svg class="relation-svg" viewBox="0 0 1000 420" role="img" aria-label="Interactive relationship map from learning styles through domains to algorithms">
-          <defs>
-            <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-              <path d="M0,0 L6,3 L0,6 Z" fill="#94a3b8"></path>
-            </marker>
-          </defs>
-          <!-- Learning style → domain -->
-          <line class="map-line" x1="180" y1="80" x2="360" y2="70" marker-end="url(#arrow)"></line>
-          <line class="map-line" x1="180" y1="80" x2="360" y2="160" marker-end="url(#arrow)"></line>
-          <line class="map-line" x1="180" y1="80" x2="360" y2="250" marker-end="url(#arrow)"></line>
-          <line class="map-line" x1="180" y1="210" x2="360" y2="70" marker-end="url(#arrow)"></line>
-          <line class="map-line" x1="180" y1="340" x2="360" y2="340" marker-end="url(#arrow)"></line>
-          <!-- Domain → algorithm families -->
-          <line class="map-line" x1="500" y1="70" x2="680" y2="40" marker-end="url(#arrow)"></line>
-          <line class="map-line" x1="500" y1="70" x2="680" y2="100" marker-end="url(#arrow)"></line>
-          <line class="map-line" x1="500" y1="160" x2="680" y2="160" marker-end="url(#arrow)"></line>
-          <line class="map-line" x1="500" y1="250" x2="680" y2="250" marker-end="url(#arrow)"></line>
-          <line class="map-line" x1="500" y1="340" x2="680" y2="340" marker-end="url(#arrow)"></line>
+        <div class="flow-map" role="img" aria-label="Relationship map from learning styles through domains to algorithm families">
+          <div class="flow-col">
+            <p class="flow-col-label">Learning Style</p>
+            <button type="button" class="flow-node type-node supervised-border" data-type="Supervised">Supervised</button>
+            <button type="button" class="flow-node type-node unsupervised-border" data-type="Unsupervised">Unsupervised</button>
+            <button type="button" class="flow-node type-node generative-border" data-type="Generative">Generative</button>
+          </div>
 
-          <g class="map-node type-node" data-type="Supervised" tabindex="0" role="button" aria-label="Filter Supervised">
-            <rect x="40" y="50" width="140" height="60" rx="12"></rect>
-            <text x="110" y="85" text-anchor="middle">Supervised</text>
-          </g>
-          <g class="map-node type-node" data-type="Unsupervised" tabindex="0" role="button" aria-label="Filter Unsupervised">
-            <rect x="40" y="180" width="140" height="60" rx="12"></rect>
-            <text x="110" y="215" text-anchor="middle">Unsupervised</text>
-          </g>
-          <g class="map-node type-node" data-type="Generative" tabindex="0" role="button" aria-label="Filter Generative">
-            <rect x="40" y="310" width="140" height="60" rx="12"></rect>
-            <text x="110" y="345" text-anchor="middle">Generative</text>
-          </g>
+          <div class="flow-arrows" aria-hidden="true"><span></span><span></span><span></span></div>
 
-          <g class="map-node domain-node" data-domain="Tabular Data" tabindex="0" role="button" aria-label="Filter Tabular Data">
-            <rect x="360" y="40" width="140" height="60" rx="12"></rect>
-            <text x="430" y="75" text-anchor="middle">Tabular Data</text>
-          </g>
-          <g class="map-node domain-node" data-domain="Computer Vision" tabindex="0" role="button" aria-label="Filter Computer Vision">
-            <rect x="360" y="130" width="140" height="60" rx="12"></rect>
-            <text x="430" y="165" text-anchor="middle">Vision</text>
-          </g>
-          <g class="map-node domain-node" data-domain="NLP" tabindex="0" role="button" aria-label="Filter NLP">
-            <rect x="360" y="220" width="140" height="60" rx="12"></rect>
-            <text x="430" y="255" text-anchor="middle">NLP</text>
-          </g>
-          <g class="map-node domain-node" data-domain="Generative AI" tabindex="0" role="button" aria-label="Filter Generative AI">
-            <rect x="360" y="310" width="140" height="60" rx="12"></rect>
-            <text x="430" y="345" text-anchor="middle">Generative AI</text>
-          </g>
+          <div class="flow-col">
+            <p class="flow-col-label">Application Domain</p>
+            <button type="button" class="flow-node domain-node" data-domain="Tabular Data">Tabular Data<span class="flow-sub">from Supervised + Unsupervised</span></button>
+            <button type="button" class="flow-node domain-node" data-domain="Computer Vision">Computer Vision<span class="flow-sub">from Supervised</span></button>
+            <button type="button" class="flow-node domain-node" data-domain="NLP">NLP<span class="flow-sub">from Supervised</span></button>
+            <button type="button" class="flow-node domain-node" data-domain="Generative AI">Generative AI<span class="flow-sub">from Generative</span></button>
+          </div>
 
-          <g class="map-node leaf-node" data-domain="Tabular Data" tabindex="0" role="button" aria-label="Show tabular algorithms">
-            <rect x="680" y="15" width="260" height="50" rx="10"></rect>
-            <text x="810" y="45" text-anchor="middle">Regression · Trees · Ensembles · SVM</text>
-          </g>
-          <g class="map-node leaf-node" data-domain="Tabular Data" data-type="Unsupervised" tabindex="0" role="button" aria-label="Show unsupervised tabular algorithms">
-            <rect x="680" y="75" width="260" height="50" rx="10"></rect>
-            <text x="810" y="105" text-anchor="middle">K-Means · PCA</text>
-          </g>
-          <g class="map-node leaf-node" data-domain="Computer Vision" tabindex="0" role="button" aria-label="Show computer vision algorithms">
-            <rect x="680" y="135" width="260" height="50" rx="10"></rect>
-            <text x="810" y="165" text-anchor="middle">CNNs · YOLO Detectors</text>
-          </g>
-          <g class="map-node leaf-node" data-domain="NLP" tabindex="0" role="button" aria-label="Show NLP algorithms">
-            <rect x="680" y="225" width="260" height="50" rx="10"></rect>
-            <text x="810" y="255" text-anchor="middle">BERT / Encoder Transformers</text>
-          </g>
-          <g class="map-node leaf-node" data-domain="Generative AI" tabindex="0" role="button" aria-label="Show generative algorithms">
-            <rect x="680" y="315" width="260" height="50" rx="10"></rect>
-            <text x="810" y="345" text-anchor="middle">Diffusion · GANs · GPT</text>
-          </g>
-        </svg>
-        <p class="map-hint">Tip: use the map, domain tiles, or filter bar—filters stay in sync.</p>
+          <div class="flow-arrows" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+          <div class="flow-col flow-col-wide">
+            <p class="flow-col-label">Algorithm Families</p>
+            <button type="button" class="flow-node leaf-node" data-domain="Tabular Data" data-type="Supervised">Regression · Trees · Ensembles · SVM</button>
+            <button type="button" class="flow-node leaf-node" data-domain="Tabular Data" data-type="Unsupervised">K-Means · PCA</button>
+            <button type="button" class="flow-node leaf-node" data-domain="Computer Vision">CNNs · YOLO Detectors</button>
+            <button type="button" class="flow-node leaf-node" data-domain="NLP">BERT / Encoder Transformers</button>
+            <button type="button" class="flow-node leaf-node" data-domain="Generative AI">Diffusion · GANs · GPT</button>
+          </div>
+        </div>
+        <p class="map-hint">Tip: click any node to filter—domain tiles and the filter bar stay in sync.</p>
       </div>
     </section>
 
@@ -640,8 +599,8 @@
       });
     });
 
-    document.querySelectorAll(".map-node").forEach((node) => {
-      const activate = () => {
+    document.querySelectorAll(".flow-node").forEach((node) => {
+      node.addEventListener("click", () => {
         const domain = node.dataset.domain || "all";
         const type = node.dataset.type || "all";
         if (node.classList.contains("type-node")) {
@@ -650,13 +609,6 @@
           setFilters({ domain, type });
         } else {
           setFilters({ domain, type: "all" });
-        }
-      };
-      node.addEventListener("click", activate);
-      node.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          activate();
         }
       });
     });
